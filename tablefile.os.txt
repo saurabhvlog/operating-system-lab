@@ -1,0 +1,79 @@
+echo "enter the number that you want to print table="
+   num=19
+  i=1
+  while [ $i -le 10 ]
+  do
+  echo " $num * $i =`expr $num \* $i ` "
+  i=`expr $i + 1`
+  done
+
+
+// square of number
+
+number="cube"
+case "$number" in
+   "square") echo "enter the number="
+     a=3
+    SQ=$(($a * $a))
+    echo " square is $SQ "
+   ;;
+   "cube") echo "enter the number to find its cube=" 
+           b=4
+           CB=$(($b * $b * $b))
+           echo " cube is $CB "
+           
+   ;;
+   "cubesqr") echo "enter the number=" 
+   ;;
+esac
+
+
+
+
+
+echo "Prime Number "
+number=5
+num=1
+while [ $num -le $number ]
+do
+    count=0
+    i=2
+    while [ $i -le `expr $num / 2` ]
+    do
+        if [ `expr $num % $i` -eq 0 ]
+        then
+            count=`expr $count + 1`
+            break 
+        fi
+         
+    i=`expr $i + 1`
+    done
+if [ $count == 0 -a $num -ne 1 ]
+then 
+    echo "$num"
+fi
+num=`expr $num + 1`
+done
+
+
+
+
+
+
+
+#Sum of natural number
+echo "Enter Size(N)"
+read N
+
+i=1
+sum=0
+
+echo "Enter Numbers"
+while [ $i -le $N ]
+do
+  read num           #get number
+  sum=$((sum + num)) #sum+=num
+  i=$((i + 1))
+done
+
+echo $sum
